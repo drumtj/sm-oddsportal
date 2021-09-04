@@ -1,0 +1,48 @@
+body,.wrap {
+  overflow: hidden;
+}
+#cover {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.65);
+  color: yellow;
+  font-size: 22pt;
+}
+#table-matches {
+  position: fixed;
+  width: 100%;
+  height: 700px;
+  left: 0px;
+  top: 0px;
+  z-index: 9998;
+  overflow-y: scroll;
+  background: #fff;
+}
+
+#table-matches>.table-main {
+  width: 537px;
+  /* height: 700px; */
+  pointer-events: none;
+}
+
+#col-right {
+  position: fixed;
+  left: 537px;
+  top: 0px;
+  background: #fff;
+  z-index: 9999;
+  height: 800px;
+  width: 245px;
+}
+
+#col-right>* {
+  display: none;
+}
+
+#my-calendar {
+  display: block !important;
+}

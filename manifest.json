@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "오즈포탈 스크래퍼",
+  "version": "0.1",
+  "icons": {
+    "64": "img/1.png"
+  },
+  "background": {
+      "scripts": [ "lib/jquery-2.1.3.min.js", "js/utils.js", "background.js" ],
+      "persistent": true
+  },
+  "browser_action": {
+    "default_icon": "img/1.png",
+    "default_title": "오즈포탈 스크래퍼"
+  },
+  "content_scripts": [
+    {
+      "_css": [ "css/style.css" ],
+      "js": [ "lib/jquery-2.1.3.min.js", "js/utils.js", "js/content.js" ],
+      "matches": [ "https://www.oddsportal.com/matches/*" ],
+      "exclude_matches": ["https://www.oddsportal.com/matches/my-matches/*"],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": ["alarms", "http://*/*", "https://*/*", "tabs", "webRequest", "webRequestBlocking", "storage", "webNavigation", "\u003Call_urls>", "cookies", "notifications", "activeTab"],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "web_accessible_resources": [ "lib/*.js", "js/*.js", "sounds/*.mp3", "css/*" ],
+  "minimum_chrome_version": "28"
+}
